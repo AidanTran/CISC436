@@ -1,0 +1,17 @@
+The following python file is run with the following.
+trana_hmm.py <train_filepath> <test_filepath>
+
+The program will initialize the hmm with random values, train using simple counting on the predicted hidden values of the sequences.
+It will continue iterating over the same data until the difference between the two models is less than .01.
+
+It will then use the converged model and test itself against the testing_filepath provided in the arguments and print out the metrics.
+
+IMPORTANT:
+I have run my viterbi algorithm against the training data set when my model was provided values gathered from counting the labeled data and got the following output
+Recall: 0.592255125284738
+Precision: 0.6878306878306878
+F1: 0.6364749082007344
+Accuracy: 0.7059405940594059.
+I'm certain that my viterbi algorithm prediction is correct, however don't think my training is correct.
+Every single time the training is run the model converges to transition frequencies of 0 and 1.
+I think that the simple counting correction for viterbi training does not work with the amount of data provided for training.
